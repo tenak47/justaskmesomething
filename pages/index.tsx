@@ -9,11 +9,11 @@ export default function Home() {
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
-    if (input.length < 30) setError(false);
+    if (input.length < 100) setError(false);
   }, [input]);
 
   const submit = async () => {
-    if (input.length > 30) return setError(true);
+    if (input.length > 100) return setError(true);
 
     setLoading(true);
 
@@ -65,7 +65,7 @@ export default function Home() {
             />
             <div
               className={`absolute ${
-                input.length > 30 ? 'text-red-500' : 'text-gray-400'
+                input.length > 100 ? 'text-red-500' : 'text-gray-400'
               } bottom-3 right-3 text-gray-400 text-xs`
             }
             >

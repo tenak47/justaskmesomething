@@ -4,7 +4,7 @@ import { OpenAIApi } from 'openai';
 import configuration from '../../utils/constants';
 
 type Data = {
-  name: string
+  result: string
 }
 
 const openai = new OpenAIApi(configuration);
@@ -24,7 +24,7 @@ export default async function handler(
     model: 'text-davinci-002',
     prompt: input,
     temperature: 1,
-    max_tokens: 40,
+    max_tokens: 500,
     top_p: 1,
     frequency_penalty: 0,
     presence_penalty: 0,
