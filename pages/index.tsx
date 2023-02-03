@@ -36,7 +36,6 @@ export default function Home() {
     }
   }
 
-  console.log('OOO => ', suggestion);
   return (
     <>
       <Head>

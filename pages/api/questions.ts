@@ -9,11 +9,6 @@ type Data = {
 
 const openai = new OpenAIApi(configuration);
 
-// const completion = await openai.createCompletion({
-//   model: "text-davinci-002",
-//   prompt: "Hello world",
-// });
-// console.log(completion.data.choices[0].text);
 export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse<Data>
