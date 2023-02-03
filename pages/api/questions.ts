@@ -1,7 +1,7 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 import type { NextApiRequest, NextApiResponse } from 'next'
-import { OpenAIApi } from 'openai';
 import configuration from '../../utils/constants';
+import { OpenAIApi } from 'openai';
 
 type Data = {
   result: string
@@ -14,6 +14,7 @@ export default async function handler(
   res: NextApiResponse<Data>
 ) {
   const { input } = req.body;
+  console.log('input', input);
 
   const response = await openai.createCompletion({
     model: 'text-davinci-002',

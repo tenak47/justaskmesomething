@@ -1,8 +1,9 @@
+import type { NextPage } from 'next'
 import Head from 'next/head'
 import { useEffect, useState } from 'react'
 import { MoonLoader } from 'react-spinners';
 
-export default function Home() {
+const Home: NextPage = () => {
   const [input, setInput] = useState('');
   const [error, setError] = useState(false);
   const [suggestion, setSuggestion] = useState('');
@@ -14,6 +15,8 @@ export default function Home() {
 
   const submit = async () => {
     if (input.length > 100) return setError(true);
+
+    console.log('OOO => ', input);
 
     setLoading(true);
 
@@ -28,9 +31,10 @@ export default function Home() {
 
       const payload: { result: string } = await res.json();
       const { result } = payload;
+
       setSuggestion(result);
     } catch(error) {
-      console.log(error); 
+      console.log('error', error); 
     } finally {
       setLoading(false); 
     }
@@ -99,3 +103,5 @@ export default function Home() {
     </>
   )
 }
+
+export default Home;
