@@ -49,10 +49,10 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <div className="max-w-7xl mx-auto py-12">
+      <div className="lg:max-w-7xl mx-auto py-12">
         <h1 className="text-2xl font-bold text-center pb-2">Just Ask Me Anything</h1>
 
-        <div className="flex flex-col gap-4 w-1/3 justify-content mx-auto">
+        <div className="flex flex-col gap-4 lg:w-1/3 px-3 justify-content mx-auto">
           <div className="relative w-full">
             {error && (
               <p className="text-red-500 text-xs">
