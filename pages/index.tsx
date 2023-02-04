@@ -8,15 +8,14 @@ const Home: NextPage = () => {
   const [error, setError] = useState(false);
   const [suggestion, setSuggestion] = useState('');
   const [loading, setLoading] = useState(false);
+  const [inputMaxLength] = useState(1000);
 
   useEffect(() => {
-    if (input.length < 100) setError(false);
+    if (input.length < inputMaxLength) setError(false);
   }, [input]);
 
   const submit = async () => {
-    if (input.length > 100) return setError(true);
-
-    console.log('OOO => ', input);
+    if (input.length > inputMaxLength) return setError(true);
 
     setLoading(true);
 
@@ -68,11 +67,11 @@ const Home: NextPage = () => {
             />
             <div
               className={`absolute ${
-                input.length > 100 ? 'text-red-500' : 'text-gray-400'
+                input.length > inputMaxLength ? 'text-red-500' : 'text-gray-400'
               } bottom-3 right-3 text-gray-400 text-xs`
             }
             >
-              <span>{input.length}</span>/100
+              <span>{input.length}</span>/{inputMaxLength}
             </div>
           </div>
           <button

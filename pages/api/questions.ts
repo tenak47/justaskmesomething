@@ -20,7 +20,7 @@ export default async function handler(
     model: 'text-davinci-002',
     prompt: input,
     temperature: 1,
-    max_tokens: 500,
+    max_tokens: 2000,
     top_p: 1,
     frequency_penalty: 0,
     presence_penalty: 0,
